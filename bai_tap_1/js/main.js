@@ -1,4 +1,5 @@
 const colorList = ["pallet", "viridian", "pewter", "cerulean", "vermillion", "lavender", "celadon", "saffron", "fuschia", "cinnabar"];
+let getELE = id => document.getElementById(id);
 
 loadBtn = (colorList) => {
     let content = "";
@@ -8,17 +9,17 @@ loadBtn = (colorList) => {
         `;
     })
 
-    document.getElementById("colorContainer").innerHTML = content;
+    getELE("colorContainer").innerHTML = content;
 
 }
 loadBtn(colorList);
 
 changeColor = (myColor) => {
-    let checkClass = document.getElementById("house").classList;
+    let checkClass = getELE("house").classList;
     if (checkClass == "house") {
-        document.getElementById("house").classList.add(myColor);
+        getELE("house").classList.add(myColor);
     } else {
-        document.getElementById("house").classList = "";
-        document.getElementById("house").classList.add("house", myColor);
+        getELE("house").classList = "";
+        getELE("house").classList.add("house", myColor);
     }
 }
